@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+admin_core:
+  name: "Admin Core"
+
+fritz_und_fraenzi:
+  name: "Fritz & Fränzi"
+
+roadster:
+  name: "Roadster"
+
+iss_cip:
+  name: "ISS Cip"

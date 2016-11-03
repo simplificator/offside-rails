@@ -6,7 +6,12 @@ class TeamCreationServiceTest < ActiveSupport::TestCase
     alessandro = players(:alessandro)
 
     assert_no_difference('Team.count') do
-      team = TeamCreationService.new(sabine, alessandro).call
+      TeamCreationService.new(sabine, alessandro).call
+    end
+
+    # the sequence of players must not matter
+    assert_no_difference('Team.count') do
+      TeamCreationService.new(alessandro, sabine).call
     end
   end
 

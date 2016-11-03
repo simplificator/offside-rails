@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+admin_core_lukas:
+  player: lukas
+  team: admin_core
+
+admin_core_miriam:
+  player: miriam
+  team: admin_core
+
+fritz_und_fraenzi_sabine:
+  player: sabine
+  team: fritz_und_fraenzi
+
+fritz_und_fraenzi_alessandro:
+  player: alessandro
+  team: fritz_und_fraenzi
+
+roadster_alessandro:
+  player: alessandro
+  team: roadster
+
+roadster_mario:
+  player: mario
+  team: roadster
+
+iss_cip_thomas_arni:
+  player: players(:thomas_arni)
+  team: teams(:iss_cip)
+
+iss_cip_florian:
+  player: players(:florian)
+  team: teams(:iss_cip)
+
+

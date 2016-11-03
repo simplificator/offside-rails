@@ -1,11 +1,36 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  first_name: MyString
-  last_name: MyString
-  image_name: MyString
+lukas:
+  first_name: 'Lukas'
+  last_name: 'Eppler'
+  image_url: 'lukas_url'
 
-two:
-  first_name: MyString
-  last_name: MyString
-  image_name: MyString
+miriam:
+  first_name: 'Miriam'
+  last_name: 'Schütz'
+  image_url: 'miriam_url'
+
+alessandro:
+  first_name: 'Alessandro'
+  last_name: 'Di Maria'
+  image_url:
+
+sabine:
+  first_name: 'Sabine'
+  last_name: 'Schäuble'
+  image_url: 'sabine_url'
+
+thomas_arni:
+  first_name: 'Thomas'
+  last_name: 'Arni'
+  image_url: 'thomas_arni_url'
+
+florian:
+  first_name: 'Flo'
+  last_name: 'Unternährer'
+  image_url: 'florian_url'
+
+mario:
+  first_name: 'Mario'
+  last_name: 'Super'
+  image_url: 'mario_url'

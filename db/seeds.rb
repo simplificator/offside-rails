@@ -33,3 +33,29 @@ simplificator_players = [
 simplificator_players.each do |player|
   Player.find_or_create_by!(player)
 end
+
+miriam = Player.find_by(first_name: 'Miriam')
+lukas  = Player.find_by(first_name: 'Lukas')
+
+# TEAMS
+
+teams = [
+  { name: 'Admin core' }
+]
+
+teams.each do |team|
+  Team.find_or_create_by!(team)
+end
+
+admin_core = Team.find_by(name: 'Admin core')
+
+# TEAM MEMBERS
+
+team_members = [
+  { player: miriam, team: admin_core },
+  { player: lukas , team: admin_core },
+]
+
+team_members.each do |team_member|
+  TeamMember.find_or_create_by!(team_member)
+end

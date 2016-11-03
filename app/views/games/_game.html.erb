@@ -6,20 +6,32 @@
 
   <% if @game.live? %>
     <tr>
-      <td class="blue"><%= link_to 'Add', update_score_path(team_color: :team_blue, add_or_remove: :add) %></td>
-      <td class="red"><%= link_to 'Add', update_score_path(team_color: :team_red, add_or_remove: :add) %></td>
+      <td class="blue">
+        <button data-behavior="update_score/team_blue/add">+</button>
+      </td>
+      <td class="red">
+        <button data-behavior="update_score/team_red/add">+</button>
+      </td>
     </tr>
   <% end %>
 
   <tr style="font-size: 96px">
-    <td class="blue"><%= @game.team_blue_score %></td>
-    <td class="red"><%= @game.team_red_score %></td>
+    <td class="blue">
+      <span id="team-blue-score"><%= @game.team_blue_score %></span>
+    </td>
+    <td class="red">
+      <span id="team-red-score"><%= @game.team_red_score %></span>
+    </td>
   </tr>
 
   <% if @game.live? %>
     <tr>
-      <td class="blue"><%= link_to 'Remove' , update_score_path(team_color: :team_blue, add_or_remove: :remove) %></td>
-      <td class="red"><%= link_to 'Remove' , update_score_path(team_color: :team_red, add_or_remove: :remove) %></td>
+      <td class="blue">
+        <button data-behavior="update_score/team_blue/remove">-</button>
+      </td>
+      <td class="red">
+        <button data-behavior="update_score/team_red/remove">-</button>
+      </td>
     </tr>
   <% end %>
 </table>

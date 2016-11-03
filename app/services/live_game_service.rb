@@ -22,6 +22,15 @@ class LiveGameService
   private
 
   def publish_score
-    # TODO: live send score to GUI
+    ActionCable.server.broadcast "referee_channel", current_scores
+  end
+
+  def current_scores
+    {
+      scores: {
+        team_blue: @live_game.team_blue_score,
+        team_red: @live_game.team_red_score
+      }
+    }
   end
 end

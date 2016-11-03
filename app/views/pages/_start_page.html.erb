@@ -1,0 +1,35 @@
+<div>
+  <ul class="players">
+    <% @selected_players.each do |player| %>
+      <li>
+        <%= form_tag remove_player_path, remote: true, authenticity_token: true, method: "post" do |f| %>
+          <%= hidden_field_tag 'pid', player.id %>
+          <%= hidden_field_tag 'sid', @selected_players.map {|p| p.id} %>
+          <%= button_tag do %>
+            <img src="<%= player.image_url %>" width="100px" height="100px">
+          <% end %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<% if @selected_players.count == 4 %>
+  <h1><%= link_to "START GAME", root_path %></h1>
+<% else %>
+  <hr>
+  <h3>Choose Players</h3>
+  <ul class="players">
+    <% @players.each do |player| %>
+      <li>
+        <%= form_tag add_player_path, remote: true, authenticity_token: true, method: "post" do |f| %>
+          <%= hidden_field_tag 'pid', player.id %>
+          <%= hidden_field_tag 'sid', @selected_players.map {|p| p.id} %>
+          <%= button_tag do %>
+            <img src="<%= player.image_url %>" width="100px" height="100px">
+          <% end %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

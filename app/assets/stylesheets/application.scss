@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+ul.players {
+  list-style-type: none;
+
+  li {
+    display: inline-block
+  }
+}

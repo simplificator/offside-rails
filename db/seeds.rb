@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# PLAYERS
 
 simplificator_players = [
   { first_name: 'Lukas'     , last_name: 'Eppler'       , image_url: 'https://simplificator.mocoapp.com/system/user/avatar/933589598/lukas.jpg'},
@@ -34,28 +35,29 @@ simplificator_players.each do |player|
   Player.find_or_create_by!(player)
 end
 
-miriam = Player.find_by(first_name: 'Miriam')
-lukas  = Player.find_by(first_name: 'Lukas')
+miriam      = Player.find_by(first_name: 'Miriam')
+lukas       = Player.find_by(first_name: 'Lukas')
+sabine      = Player.find_by(first_name: 'Sabine')
+alessandro  = Player.find_by(first_name: 'Alessandro')
+mario       = Player.find_by(first_name: 'Mario')
 
 # TEAMS
 
 teams = [
-  { name: 'Admin core' }
+  { player_a: miriam  , player_b: lukas       , team_name: 'Admin core' },
+  { player_a: sabine  , player_b: alessandro  , team_name: 'Fritz & Fränzi' },
+  { player_a: mario   , player_b: alessandro  , team_name: 'Roadster' },
 ]
 
 teams.each do |team|
-  Team.find_or_create_by!(team)
+  TeamCreationService.new(team[:player_a], team[:player_b], team_name: team[:team_name]).call
 end
 
-admin_core = Team.find_by(name: 'Admin core')
+admin_core        = Team.find_by(name: 'Admin core')
+fritz_und_fraenzi = Team.find_by(name: 'Fritz & Fränzi')
+roadster          = Team.find_by(name: 'Roadster')
 
-# TEAM MEMBERS
 
-team_members = [
-  { player: miriam, team: admin_core },
-  { player: lukas , team: admin_core },
-]
-
-team_members.each do |team_member|
-  TeamMember.find_or_create_by!(team_member)
+if Rails.env.development?
+  game = GameCreationService.new(admin_core, fritz_und_fraenzi).call
 end

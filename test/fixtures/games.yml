@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+admin_vs_fritz_one:
+  team_red: admin_core
+  team_blue: fritz_und_fraenzi
+  started_at: 2016-11-03 12:00:01
+  ended_at: 2016-11-03 12:05:00
+  team_red_score: 8
+  team_blue_score: 2
+
+admin_vs_fritz_two:
+  team_red: fritz_und_fraenzi
+  team_blue: admin_core
+  started_at: 2016-11-03 12:05:01
+  ended_at: 2016-11-03 12:10:00
+  team_red_score: 8
+  team_blue_score: 6
+
+admin_vs_fritz_three:
+  team_red: admin_core
+  team_blue: fritz_und_fraenzi
+  started_at: 2016-11-03 12:10:01
+  ended_at: 2016-11-03 12:15:00
+  team_red_score: 4
+  team_blue_score: 8
+
+roadster_vs_admin_live:
+  team_red: admin_core
+  team_blue: roadster
+  started_at: <%= Time.zone.now - 10.minutes %>
+  ended_at:
+  team_red_score: 2
+  team_blue_score: 1

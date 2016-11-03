@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161103110033) do
+ActiveRecord::Schema.define(version: 20161103145508) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "games", force: :cascade do |t|
+    t.integer  "team_red_id",                                     null: false
+    t.integer  "team_blue_id",                                    null: false
+    t.datetime "started_at",      default: '2016-11-03 15:59:43', null: false
+    t.datetime "ended_at"
+    t.integer  "team_red_score",  default: 0,                     null: false
+    t.integer  "team_blue_score", default: 0,                     null: false
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
+  end
 
   create_table "players", force: :cascade do |t|
     t.string   "first_name", null: false
@@ -38,6 +49,8 @@ ActiveRecord::Schema.define(version: 20161103110033) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "games", "teams", column: "team_blue_id", name: "FK_GAMES_TEAM_BLUE"
+  add_foreign_key "games", "teams", column: "team_red_id", name: "FK_GAMES_TEAM_RED"
   add_foreign_key "team_members", "players"
   add_foreign_key "team_members", "teams"
 end

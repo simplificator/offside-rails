@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  resources :games, only: [:show]
+  get  'live', to: 'games#live'
+  get  'live/update_score/:team_color/:add_or_remove', to: 'games#update_score', as: 'update_score'
 
   root to: 'pages#index'
 

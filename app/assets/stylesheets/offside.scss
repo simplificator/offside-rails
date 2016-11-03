@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border: none;
+}
+
+td {
+  text-align: center;
+}
+
+.red {
+  background-color: #f94853;
+}
+
+.blue {
+  background-color: #7271ff;
+}
+
+ul.players {
+  list-style-type: none;
+
+  li {
+    display: inline-block
+  }
+}

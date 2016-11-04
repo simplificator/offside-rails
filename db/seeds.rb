@@ -59,5 +59,5 @@ roadster          = Team.find_by(name: 'Roadster')
 
 
 if Rails.env.development?
-  game = GameCreationService.new(admin_core, fritz_und_fraenzi).call
+  game = GameCreationService.new(team_red: admin_core, team_blue: fritz_und_fraenzi).call
 end

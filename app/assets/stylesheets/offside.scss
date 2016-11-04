@@ -66,14 +66,30 @@ footer img {
   box-shadow: inset 1px 1px 150px rgba(0, 0, 0, 0.3);
 }
 
+.wallpaper-victory {
+  position: fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  height: 100%;
+  width: 100%;
+  background-color: #1a73b1;
+  background-image: url(images/bg-badge.png);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
+  z-index:-10;
+  box-shadow: inset 1px 1px 150px rgba(0, 0, 0, 0.3);
+}
+
 .start {
   padding: 50px;
-  padding-top:80px;
   margin: 0 auto;
   text-align: center;
       }
 .start img {
-  width: 80%;
+  width: 300px;
       }
 
   .player-fallback-image {
@@ -93,8 +109,8 @@ img.img-circle {
 
 
 header {
-        height: 150px;
-      }
+  height: 150px;
+}
 
 slots {
   display: flex;
@@ -135,12 +151,39 @@ slots {
   margin: 20px;
 }
 
+players {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom:20px;
+}
+
 .player {
   color: white;
   border-radius: 50px;
   border: 3px solid #fff ;
   height: 50px;
   width:50px;
+  margin: 7px;
+}
+
+winners {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0px;
+  margin-bottom:20px;
+}
+
+.winner {
+  color: white;
+  border-radius: 50px;
+  border: 3px solid #fff ;
+  height: 70px;
+  width:70px;
   margin: 7px;
 }
 
@@ -156,6 +199,15 @@ h1 {
 .field img {
   width: 200px;
 }
+
+.badge {
+        width: 100%;
+      }
+
+.badge img {
+  width: 100%;
+}
+
 
 .kick-off-button {
   font-size: 3rem;
@@ -190,5 +242,5 @@ button {
 
 .nonvisible {
   visibility: hidden;
-  * { display: none };
-}
+   * { display: none };
+ }

@@ -8,6 +8,11 @@
 
 # PLAYERS
 
+TeamMember.destroy_all
+Game.destroy_all
+Team.destroy_all
+Player.destroy_all
+
 simplificator_players = [
   { first_name: 'Lukas'     , last_name: 'Eppler'       , image_url: 'https://simplificator.mocoapp.com/system/user/avatar/933589598/lukas.jpg'},
   { first_name: 'Miriam'    , last_name: 'Schütz'       , image_url: 'https://simplificator.mocoapp.com/system/user/avatar/933589571/profilfoto-2.jpg'},
@@ -32,7 +37,7 @@ simplificator_players = [
 ]
 
 simplificator_players.each do |player|
-  Player.find_or_create_by!(player)
+  Player.where(player).first_or_create
 end
 
 miriam      = Player.find_by(first_name: 'Miriam')

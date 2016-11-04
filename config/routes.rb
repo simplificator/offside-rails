@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root to: 'pages#index'
+  root to: 'pages#home'
 
-  post 'add_player', to: 'pages#add_player'
-  post 'remove_player', to: 'pages#remove_player'
+  resources :games, only: [:show, :new]
+  get  'live', to: 'games#live'
+  get  'live/update_score/:team_color/:add_or_remove', to: 'games#update_score', as: 'update_score'
+  post 'add_player'   , to: 'games#add_player'
+  post 'remove_player', to: 'games#remove_player'
+  post 'final_whistle', to: 'games#final_whistle', as: 'final_whistle'
 end

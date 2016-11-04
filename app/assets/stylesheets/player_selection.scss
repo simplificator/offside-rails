@@ -1,0 +1,43 @@
+.pitch {
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-color: #4AA42F;
+  position: absolute;
+  box-shadow: inset 1px 1px 150px #2E2F30;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+
+  h1 {
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+
+  .field {
+    height: 250px;
+  }
+
+
+
+  .game-line-up {
+    display: -webkit-flex;
+    display: flex;
+    width: 100%;
+    text-align: center;
+
+    .red {
+      width: 35%;
+      background: indianred;
+    }
+
+    .center-field {
+      width: 30%;
+    }
+
+    .blue {
+      width: 35%;
+      background: deepskyblue;
+    }
+  }
+}

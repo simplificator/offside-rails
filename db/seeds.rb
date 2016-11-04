@@ -60,4 +60,8 @@ roadster          = Team.find_by(name: 'Roadster')
 
 if Rails.env.development?
   game = GameCreationService.new(team_red: admin_core, team_blue: fritz_und_fraenzi).call
+  game.team_red_score = 4
+  game.team_blue_score = 8
+  game.final_whistle!
+  puts "Use /games/#{game.reload.id} to see a finished game"
 end

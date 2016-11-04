@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $('.selectable-players').on('click', function(event) {
+  $('.selectable-players').on('click touchstart', function(event) {
     var selectedPlayer = $(event.target);
     var selectedPlayerId = selectedPlayer.parent('li').data('player-id');
 
@@ -12,7 +12,7 @@ $(document).ready(function () {
     refreshLists();
   });
 
-  $('.slots').on('click', function(event) {
+  $('.slots').on('click touchstart', function(event) {
     var slot = $(event.target);
     slot.attr('src', "");
     slot.attr('data-selected-player-id', "");

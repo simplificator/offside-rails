@@ -37,7 +37,9 @@ ul {
 }
 
 ul.players {
+  padding: 2em 3em;
   li {
+    padding: 0.3em;
     display: inline-block
   }
 }
@@ -53,14 +55,14 @@ footer img {
 
 .wallpaper {
   position: fixed;
-  top:0;
-  right:0;
-  bottom:0;
-  left:0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   height: 100%;
   width: 100%;
   background-color: #00a200;
-  z-index:-10;
+  z-index: -10;
   box-shadow: inset 1px 1px 150px rgba(0, 0, 0, 0.3);
 }
 
@@ -74,18 +76,30 @@ footer img {
   width: 80%;
       }
 
+  .player-fallback-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: white;
+  background-color: #fec52d;
+  font-size: 74%;
+  text-align: center;
+  display: inline-block;
+}
+
 img.img-circle {
   border-radius: 50%;
 }
+
 
 header {
         height: 150px;
       }
 
-      slots {
-        display: flex;
-        width: 100%;
-      }
+slots {
+  display: flex;
+  width: 100%;
+}
 
 .left-red, .right-blue, .field {
   display: flex;
@@ -141,4 +155,40 @@ h1 {
 
 .field img {
   width: 200px;
+}
+
+.kick-off-button {
+  font-size: 3rem;
+  color: white;
+  border: 1px solid white;
+  border-radius: 3px;
+  padding: 5px 17px;
+  margin-top: 1em;
+  text-decoration: none;
+  background-color: transparent;
+
+}
+
+.center {
+  text-align: center;
+}
+
+.img-circle {
+  border-radius: 50%;
+}
+
+button {
+  background-color: transparent;
+  border-width: 0;
+  font-size: 32px;
+}
+
+.hidden {
+  display: none;
+  * { display: none };
+}
+
+.nonvisible {
+  visibility: hidden;
+  * { display: none };
 }

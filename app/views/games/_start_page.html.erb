@@ -1,35 +1,45 @@
-<div>
-  <ul class="players">
-    <% @selected_players.each do |player| %>
-      <li>
-        <%= form_tag remove_player_path, remote: true, authenticity_token: true, method: "post" do |f| %>
-          <%= hidden_field_tag 'pid', player.id %>
-          <%= hidden_field_tag 'sid', @selected_players.map {|p| p.id} %>
-          <%= button_tag do %>
-            <img src="<%= player.image_url %>" width="100px" height="100px">
-          <% end %>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
+<div class="game-line-up">
+  <div class="red">
+    <div>
+      <img src="" class="slots img-circle nonvisible" data-selected-player-id="" width="100px" height="100px">
+    </div>
+    <div>
+      <img src="" class="slots img-circle nonvisible" data-selected-player-id="" width="100px" height="100px">
+    </div>
+  </div>
+
+  <div class="center-field">
+    <img src="/images/field-img-white.png" class="field">
+  </div>
+
+  <div class="blue">
+    <div>
+      <img src="" class="slots img-circle nonvisible" data-selected-player-id="" width="100px" height="100px">
+    </div>
+    <div>
+      <img src="" class="slots img-circle nonvisible" data-selected-player-id="" width="100px" height="100px">
+    </div>
+  </div>
 </div>
 
-<% if @selected_players.count == 4 %>
-  <h1><%= link_to "START GAME", root_path %></h1>
-<% else %>
-  <hr>
-  <h3>Choose Players</h3>
-  <ul class="players">
-    <% @players.each do |player| %>
-      <li>
-        <%= form_tag add_player_path, remote: true, authenticity_token: true, method: "post" do |f| %>
-          <%= hidden_field_tag 'pid', player.id %>
-          <%= hidden_field_tag 'sid', @selected_players.map {|p| p.id} %>
-          <%= button_tag do %>
-            <img src="<%= player.image_url %>" width="100px" height="100px">
-          <% end %>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
+<div style="margin: 0 auto;">
+<%= form_tag games_path, remote: true, authenticity_token: true, method: :post do |f| %>
+    <%= hidden_field_tag :player_ids, id: 'selected_player_ids', value: '' %>
+    <%= submit_tag "Kickoff", class: 'kick-off-button nonvisible' %>
 <% end %>
+</div>
+
+
+<ul class="players">
+  <% @players.each do |player| %>
+    <li data-player-id="<%= player.id%>" >
+        <% if player.image_url.present? %>
+          <img src="<%= player.image_url %>" width="50px" height=50px" class="img-circle selectable-players">
+        <% else %>
+          <div class="player-fallback-image selectable-players" ><%= player.initials %></div>
+        <% end %>
+    </li>
+  <% end %>
+</ul>
+
+

@@ -34,7 +34,7 @@
   <% @players.each do |player| %>
     <li data-player-id="<%= player.id%>" >
         <% if player.image_url.present? %>
-          <img src="<%= player.image_url %>" width="50px" height=50px" class="img-circle selectable-players">
+          <%= image_tag player.image_url, size: "80x80", class:"img-circle selectable-players" %>
         <% else %>
           <div class="player-fallback-image selectable-players" ><%= player.initials %></div>
         <% end %>

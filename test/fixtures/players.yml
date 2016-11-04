@@ -13,7 +13,7 @@ miriam:
 alessandro:
   first_name: 'Alessandro'
   last_name: 'Di Maria'
-  image_url:
+  image_url: 'alessandro_url'
 
 sabine:
   first_name: 'Sabine'

@@ -1,37 +1,66 @@
-<table>
-  <tr>
-    <td width="200px" class="blue">Team Blue</td>
-    <td width="200px" class="red">Team Red</td>
-  </tr>
+<div class="scoreboard">
+  <div class="half blue">
+    <div class="scores">
+      <div class="score">
+        <div class="score-controls">
+          <div class="control-item">
+          <% if @game.live? %>
+            <button data-behavior="update_score/team_blue/add">&#708;</button>
+          <% end %>
+          </div>
+          <div class="big-score">
+            <span id="team-blue-score"><%= @game.team_blue_score %></span>
+          </div>
+          <div class="control-item">
+          <% if @game.live? %>
+            <button data-behavior="update_score/team_blue/remove">&#709;</button>
+          <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="team">
+        <ul>
+          <% @game.team_blue.players.each do |player| %>
+            <li><%= image_tag player.image_url, size: '100x100', class: 'img-circle' %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="half red">
+    <div class="scores">
+      <div class="score">
+        <div class="score-controls">
+          <div class="control-item">
+            <% if @game.live? %>
+                <button data-behavior="update_score/team_red/add">&#708;</button>
+            <% end %>
+          </div>
+          <div class="big-score">
+            <span id="team-red-score"><%= @game.team_red_score %></span>
+          </div>
+          <div class="control-item">
+            <% if @game.live? %>
+                <button data-behavior="update_score/team_red/remove">&#709;</button>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="team">
+        <ul>
+          <% @game.team_red.players.each do |player| %>
+              <li><%= image_tag player.image_url, size: '100x100', class: 'img-circle' %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <% if @game.live? %>
-    <tr>
-      <td class="blue">
-        <button data-behavior="update_score/team_blue/add">+</button>
-      </td>
-      <td class="red">
-        <button data-behavior="update_score/team_red/add">+</button>
-      </td>
-    </tr>
-  <% end %>
-
-  <tr style="font-size: 96px">
-    <td class="blue">
-      <span id="team-blue-score"><%= @game.team_blue_score %></span>
-    </td>
-    <td class="red">
-      <span id="team-red-score"><%= @game.team_red_score %></span>
-    </td>
-  </tr>
-
-  <% if @game.live? %>
-    <tr>
-      <td class="blue">
-        <button data-behavior="update_score/team_blue/remove">-</button>
-      </td>
-      <td class="red">
-        <button data-behavior="update_score/team_red/remove">-</button>
-      </td>
-    </tr>
-  <% end %>
-</table>
+<% if @game.live? %>
+  <div class="final-whistle">
+    <%= form_tag final_whistle_path, remote: true, authenticity_token: true, method: :post do |f| %>
+      <%= submit_tag 'Final whistle', class: 'button' %>
+    <% end %>
+  </div>
+<% end %>

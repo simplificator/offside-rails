@@ -1,0 +1,90 @@
+.scoreboard {
+  top: 0; right: 0; bottom: 0; left: 0;
+  position: absolute;
+
+  display: -webkit-flex;
+  display: flex;
+
+  button {
+    background-color: transparent;
+    border-width: 0;
+    font-size: 32px;
+  }
+
+  .half {
+    position: relative;
+    width: 50%;
+
+    .scores {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      display: -webkit-flex;
+      display: flex;
+
+      -webkit-flex-direction: column;
+      flex-direction: column;
+
+      text-align: center;
+
+      .score {
+        position: relative;
+        height: 60%;
+
+        .score-controls {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          display: -webkit-flex;
+          display: flex;
+
+          -webkit-flex-direction: column;
+          flex-direction: column;
+
+          .control-item {
+            height: 10%;
+            font-size: 4rem;
+          }
+
+          .big-score {
+            height: 60%;
+          }
+        }
+      }
+
+      .team {
+        height: 40%;
+      }
+    }
+
+  }
+
+  .big-score {
+    font-size: 13rem;
+  }
+
+}
+
+.final-whistle {
+
+
+  .button {
+    position: fixed;
+    bottom: -40px;
+    margin-right: auto;
+    margin-left: auto;
+    left: 0px;
+    right: 0px;
+
+    border-width: 0;
+    color: black;
+    font-weight: normal;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    padding-bottom: 15px;
+  }
+}

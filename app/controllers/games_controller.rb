@@ -30,6 +30,12 @@ class GamesController < ApplicationController
     @players = Player.all - @selected_players
   end
 
+  def final_whistle
+    @game = live_game
+    @game.final_whistle!
+    redirect_to @game
+  end
+
   private
 
   def live_game

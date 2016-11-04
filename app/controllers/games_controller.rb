@@ -10,6 +10,7 @@ class GamesController < ApplicationController
 
   def live
     @game = live_game
+    redirect_to new_game_path unless @game.present?
   end
 
   def update_score

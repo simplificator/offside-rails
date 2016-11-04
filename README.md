@@ -1,24 +1,33 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Action Cable on Heroku 
 
-Things you may want to cover:
+### Setup
 
-* Ruby version
+Manual: https://blog.heroku.com/real_time_rails_implementing_websockets_in_rails_5_with_action_cable
 
-* System dependencies
+```shell
+> heroku addons:add redistogo
+Creating redistogo on ⬢ offside-rails... free
+Created redistogo-perpendicular-19308 as REDISTOGO_URL
+Use heroku addons:docs redistogo to view documentation
 
-* Configuration
+> heroku config --app offside-rails | grep REDISTOGO_URL
+REDISTOGO_URL:            redis://redistogo:a2d8f053ac05e7b0b2fcb288eb382b34@porgy.redistogo.com:9379/
+```
 
-* Database creation
+Put `REDISTOGO_URL` to `./config/cable.yml`, like so:
 
-* Database initialization
+```yml
+# ...
+production:
+  adapter: redis
+  url: redis://redistogo:a2d8f053ac05e7b0b2fcb288eb382b34@porgy.redistogo.com:9379/
+```
 
-* How to run the test suite
+Make configurations in `./config/environments/production.rb`
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```ruby
+  config.web_socket_server_url = "wss://offside-rails.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://offside-rails.herokuapp.com', 'http://offside-rails.herokuapp.com']
+```

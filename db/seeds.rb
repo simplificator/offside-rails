@@ -27,8 +27,8 @@ simplificator_players = [
   { first_name: 'Cédric'    , last_name: 'Wider'        , image_url: 'https://simplificator.mocoapp.com/system/user/avatar/933594369/2f1121ff007a56f495623c04f83166a5.jpeg'},
   { first_name: 'Marion'    , last_name: 'Schleifer'    , image_url: 'https://simplificator.mocoapp.com/system/user/avatar/933591687/profilfoto-marion.png'},
   { first_name: 'Florian'   , last_name: 'Unternährer'  , image_url: 'https://simplificator.mocoapp.com/system/user/avatar/933596258/florian-portrait_360.png'},
-  { first_name: 'Sandra'    , last_name: 'Blatter'      , image_url: ''},
-  { first_name: 'Marcus'    , last_name: 'Egues'        , image_url: ''}
+  { first_name: 'Sandra'    , last_name: 'Blatter'      , image_url: 'sandra_blatter.png'},
+  { first_name: 'Marcus'    , last_name: 'Egues'        , image_url: 'marcus_egues.png'}
 ]
 
 simplificator_players.each do |player|

@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20161103145508) do
   create_table "games", force: :cascade do |t|
     t.integer  "team_red_id",                                     null: false
     t.integer  "team_blue_id",                                    null: false
-    t.datetime "started_at",      default: '2016-11-03 21:42:36', null: false
+    t.datetime "started_at",      default: '2016-11-03 15:59:43', null: false
     t.datetime "ended_at"
     t.integer  "team_red_score",  default: 0,                     null: false
     t.integer  "team_blue_score", default: 0,                     null: false

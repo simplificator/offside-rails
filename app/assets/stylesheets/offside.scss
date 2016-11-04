@@ -77,3 +77,68 @@ footer img {
 img.img-circle {
   border-radius: 50%;
 }
+
+header {
+        height: 150px;
+      }
+
+      slots {
+        display: flex;
+        width: 100%;
+      }
+
+.left-red, .right-blue, .field {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.allplayers {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  margin-bottom:20px;
+}
+
+.left-red > div {
+  background: #f1272d;
+}
+.right-blue > div {
+  background: #1a73b1;
+}
+
+.slot {
+  font-size: 30pt;
+  color: white;
+  border-radius: 60px;
+  border: 3px solid #fff ;
+  height: 70px;
+  width:70px;
+  margin: 20px;
+}
+
+.player {
+  color: white;
+  border-radius: 50px;
+  border: 3px solid #fff ;
+  height: 50px;
+  width:50px;
+  margin: 7px;
+}
+
+h1 {
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  font-size: 3em;
+  padding-top:50px;
+  margin:0;
+}
+
+.field img {
+  width: 200px;
+}

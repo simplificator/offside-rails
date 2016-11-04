@@ -18,8 +18,6 @@
     height: 250px;
   }
 
-
-
   .game-line-up {
     display: -webkit-flex;
     display: flex;
@@ -28,16 +26,20 @@
 
     .red {
       width: 35%;
-      background: indianred;
+      background: none;
     }
 
     .center-field {
       width: 30%;
+
+      img {
+        margin: 0 auto;
+      }
     }
 
     .blue {
       width: 35%;
-      background: deepskyblue;
+      background: none;
     }
   }
 }
